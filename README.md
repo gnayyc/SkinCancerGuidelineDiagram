@@ -1,2 +1,2 @@
-# SkinCancerGuidelineDiagram
-Diagram for Skin Cancer Diagram
+# Skin Cancer Guideline Diagram
+Diagram for Skin Cancer Guideline Diagram
