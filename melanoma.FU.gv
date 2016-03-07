@@ -1,0 +1,28 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=true]
+  node [shape = box, fontname = Helvetica]
+
+#  T1->T2 [style=invis]
+#  T1 [label = "CLINICAL/PATHOLOGICAL STAGE"; shape=plaintext]
+#  T2 [label = "FOLLOW-UP"; shape=plaintext]
+#  T3 [label = "RECURRENCE"; shape=plaintext]
+
+#  T1->
+  S0->S1->S2 [style=invis]
+  
+  S0->F0
+  S0 [label="0期"; width=1.5]
+  F0 [label="門診追蹤:\l- 每年一次。\l- 不需特別抽血或做影像檢查\l"; width=5]
+
+  S1->F1
+  S1 [label="IA~IIA期"; width=1.5]
+  F1 [label="門診追蹤:\l- 每6-12 月一次，共5年。\l- 不建議為無症狀復發或轉移病灶\l    進行例行性影像檢查篩檢。\l"; width=5]
+
+  S2->F2
+  S2 [label="IIB~IV期"; width=1.5]
+  F2 [label="門診追蹤:\l- 每3-6月一次，共2年\l- 每3-12月一次，共3年\l- 之後可視臨床狀況每年一次。\l- 每3-12月，考慮胸部X光、CT、PET、\l    或腦部核磁共振檢查以篩檢復發或轉移病灶。\l- 5年後則不須在無症狀時做常規影像檢查。\l"; width=5]
+
+  {rank = same; S0; S1; S2}
+  {rank = same; F0; F1; F2}
+
+}

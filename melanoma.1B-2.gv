@@ -1,0 +1,44 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+#  T1 [label = "CLINICAL STAGE"; width=2.5; shape=plaintext]
+#  T2 [label = "WORKUP"; shape=plaintext]
+#  T3 [label = "PRIMARY TREATMENT"; shape=plaintext]
+#  T4 [label = "ADJUVANT TREATMENT"; shape=plaintext]
+
+  S1B [label =<IB期癌<br ALIGN="LEFT"/>(厚度0.76-1mm，<br ALIGN="LEFT"/>無潰瘍，<br ALIGN="LEFT"/>mitotic rate ≥ 1/mm<sup>2</sup>)>; width=2.5]
+  S2 [label =<II期癌<br ALIGN="LEFT"/>(厚度 &gt; 1mm, N0)<br ALIGN="LEFT"/>>; width=2.5]
+  
+  W2 [label = "- 病史詢問及理學檢查\l
+- 不建議例行性影像檢查/實驗室檢查\l
+- 為評估特定症狀/症候開立影像檢查(CT, PET/CT, MRI)"; height=2.5]
+#  W3 [label = "Discuss and consider sentinel node biopsy"]
+
+  Tx21 [label = "廣泛性切除\l"; height=1.5; width=2]
+  Tx22 [label = "廣泛性切除\l與前哨淋巴結切片\l"; height=1.5; width=2]
+  Tx3 [label = "臨床試驗\n/觀察\n"; height=3; width=2]
+  
+  N0 [label = "陰性前哨淋巴結"; height=1.2]
+  N1 [label = "陽性前哨淋巴結"; height=1.2]
+  FU1 [label = "追蹤"; width=3; height=3]
+  FU2 [label = "參見 III 期癌流程"; width=3]
+
+#  T1->T2->T3->T4 [style=invis]
+#  T1->S1B->S2 [style=invis]  
+
+  {S1B S2}->W2->Dis->Tx21->Tx3->FU1
+        Dis->Tx22->N0->Tx3->FU1
+            Tx22->N1->FU2
+
+  Dis [label = "討論並提供前哨淋巴結切片"; height=2.5]
+
+  {rank = same; S1B; S2}
+  {rank = same; W2}
+  {rank = same; Tx21; Tx22}
+  {rank = same; FU1; FU2}
+  {rank = same; N0; N1}
+  
+  
+
+}

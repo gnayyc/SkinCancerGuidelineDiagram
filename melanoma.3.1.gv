@@ -1,0 +1,59 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=true]
+  node [shape = box, fontname = Helvetica]
+
+#  T1->T2->T22->T3->T4 [style=invis]
+#  T22 [style=invisible]
+#  T1->
+#  S3->S4 [style=invis]
+#  Tx3->OP41->OP40 [style=invis]
+  S3->W3->Tx3->FU3
+#  Tx41->Tx42 [style=invis]
+#  OP41->OP40 [style=invis]
+#  S4->W4->Tx4->FU4
+
+#  S4->W4->OP41->Tx41->Resi0->FU4
+#                Tx41->Resi1->OP40
+#                Tx42->M0->Tx421
+#                Tx42->M1->OP40
+#      W4->OP40->B1->OT4->FU41
+#          OP40->B0->FU41
+
+
+#  {rank = same; S3; S4}
+#  {rank = same; W3; W4}
+#  {rank = same; OP40; OP41}
+#  {rank = same; Tx3; Tx41; B0; B1}
+#  {rank = same; FU3; FU4; FU41}
+#  {rank = same; Resi0; Resi1; OT4}
+#  {rank = same; N0; N1}
+
+
+#  T1 [label = "CLINICAL/\lPATHOLOGICAL STAGE\l"; width=2.5; shape=plaintext]
+#  T2 [label = "WORKUP"; shape=plaintext]
+#  T3 [label = "PRIMARY TREATMENT"; shape=plaintext]
+#  T4 [label = "ADJUVANT TREATMENT"; shape=plaintext]
+
+  S3 [label ="III期癌\n(In-transit)"; width=3; height=2]
+#  S4 [label ="IV期癌\n(轉移)"; width=3; height=2]
+  
+  W3 [label = "細針抽吸淋巴結檢查為佳\l
+或core, incisional, excisional 淋巴結切片\l
+建議為腫瘤分期及評估特定症狀與症候\l安排基礎影像檢查(CT, PET/CT, MRI)\l\l"; 
+height=2.5; width=6]
+#  W4 [label = "若無已存組織可進行基因檢查，安排淋巴結細針抽吸或\l
+#LDH\l
+#BRAF 基因突變分析\l
+#為腫瘤分期及評估特定症狀與症候安排基礎影像檢查\l(chest/abdominal/pelvic CT, PET/CT, brain MRI)\l"; 
+#height=4; width=6]
+#  W3 [label = "Discuss and consider sentinel node biopsy"]
+
+  Tx3 [label = "臨床試驗(建議)\l
+局部治療：盡可能確認邊緣完全切除\l
+  無法全切除：考慮放射線治療\l
+系統性治療\l"; 
+height=1.5; width=2.5]
+  FU3 [label = "臨床試驗\l
+觀察追蹤\l"; width=3; height=2]
+
+}

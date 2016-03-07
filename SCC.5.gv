@@ -1,0 +1,47 @@
+digraph {
+  compound=true;
+
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+  subgraph cluster1 {
+    ln1 -> tx1
+    ln2 -> tx2
+    ln3 -> tx3
+    ln4 -> tx4
+		label = "";
+	}
+	
+	tx1 -> p1 [ltail=cluster1];
+	tx2 -> p2 [ltail=cluster1];
+	tx3 -> p3 [ltail=cluster1];
+	tx4 -> p4 [ltail=cluster1];
+	
+	p1 -> r1
+	p2 -> r2
+	{p3 p4} -> r3
+	
+	{r1 r2 r3} -> obs -> fu
+	
+	ln1 [label="單一淋巴結≦3cm"; width = 2]
+	ln2 [label="單一淋巴結>3cm\l或同側多處淋巴結\l轉移\l"; width = 2]
+	ln3 [label="雙側淋巴結轉移"; width = 2]
+	ln4 [label="腮腺淋巴結侵犯"; width = 2]
+	
+	tx1 [label = "切除主要淋巴結，並進行同側\l選擇性頸部淋巴結廓清手術。\l"; width=4]
+	tx2 [label = "切除主要淋巴結，並進行同側\l廣泛性頸部淋巴結廓清手術。\l"; width=4]
+	tx3 [label = "切除主要淋巴結，並進行雙側\l廣泛性頸部淋巴結廓清手術。\l"; width=4]
+	tx4 [label = "切除主要淋巴結，並進行腮腺\l表面切除及同側頸部\l淋巴結廓清手術。\l"; width=4]
+	
+	p1 [label = "單一淋巴結≦3cm，\l並且無囊外侵犯。\l"; width=2.5]
+	p2 [label = "單一淋巴結>3cm，\l或陽性淋巴結數≧2，\l並且無囊外侵犯。\l"; width=2.5]
+	p3 [label = "有囊外侵犯\l"; width=2.5]
+	p4 [label = "陽性淋巴結無法完全切除\l"; width=2.5]
+
+  r1 [label = 放射線治療或觀察; width = 2.5]
+  r2 [label = 放射線治療; width = 2.5]
+  r3 [label = "放射線治療，並考慮\l包含同步全身性系統性\l療法。\l"; width = 2.5; height=1.5]
+  
+  obs [label = "觀察"; height = 3]
+  fu [label = "追蹤 (SCC-6)"; height = 3]
+  }

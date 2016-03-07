@@ -1,0 +1,35 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+  high -> {tx1 tx2 tx3}
+          tx1 -> {bo2 bo1}
+                bo1 -> fu
+                bo2 -> tx11 -> fu
+          tx2 -> {bo4 bo3}
+                bo3 -> tx21 -> fu
+                bo4 -> tx22 -> fu
+          tx3 -> fu
+  
+  high [label = 局部高惡性度鱗狀上皮細胞癌; height = 4]
+  tx1 [label = "標準切除手術\n
+若是再次切除的高惡性病灶，建議更廣泛的切除邊緣後\l直接線性縫合或延遲性縫合。\l
+";
+width = 6.5; height = 1.2]
+  tx11 [label = 病灶全切除並進行完整邊緣病理鏡檢; width = 5]
+  tx2  [label = 莫氏手術或病灶全切除並進行完整邊緣病理鏡檢; width = 6.5; height = 1.2]
+  tx21 [label = "若廣泛侵犯神經周圍組織或主要大神經，\l則建議追加輔助性放射線治療療法。";
+  width = 5]
+  tx22 [label = 放射線治療; width=5]
+  tx3 [label = 無法進行手術之病灶，建議放射線治療±系統性療法。; width = 6.5; height = 1.2]
+  fu [label = "追蹤 (SCC-6)"; height = 4]
+
+  {rank = same; tx1; tx2; tx3}
+  {rank = same; bo1; bo2; bo3; bo4}
+  
+  bo1 [label = 邊緣呈現陰性; width=2]
+  bo2 [label = 邊緣呈現陽性; width=2]
+  bo3 [label = 邊緣呈現陰性; width=2]
+  bo4 [label = 邊緣呈現陽性; width=2]
+
+}

@@ -1,0 +1,36 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+  
+  lesion [label = "疑似病灶"]
+  bx [label = "切片"]
+  none [label = "切片不足"]
+  bx2 [label = "重新切片"]
+  dx [label = "黑色素瘤確診"]
+  patho [label = "病理切片報告\l
+  Breslow厚度\l
+  潰瘍\l
+  真皮mitotic rate (#/mm2)\l
+  評估深部與週邊邊緣\l
+  Microsatellitosis\l
+  Clark 深度\l
+  結締組織增生 (Desmoplasia)\l"]
+  
+  clinical [label = "病史詢問及理學檢查\l
+  完整的皮膚及局部淋巴結檢查\l
+  評估黑色素瘤風險\l"]
+  
+  stage [label = "0期原位癌\l
+IA，IB期\l
+IB，II期\l
+III期\l
+IV期轉移\l
+"]
+  
+  
+  lesion->bx->none->bx2->dx->patho->clinical->stage
+          bx->dx
+  
+  {rank = same; bx2; dx}
+
+}

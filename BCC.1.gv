@@ -1,0 +1,24 @@
+digraph {
+  graph [rankdir = LR; splines=splines; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+  "疑似病灶" -> lesion -> "低惡性度"  -> "(BCC-2)"
+          lesion -> "高惡性度" -> "(BCC-3)"
+
+  lesion [label = "病史詢問及理學檢查\l
+完整的皮膚檢查及局部淋巴結檢查\l
+病理切片\l
+    若是病灶深入表層之下,切片建議包含網狀真皮層。\l
+若疑似廣泛型病灶則應加做影像學檢查(MRI或CT)\l"; 
+height = 4]
+#  m1 [label = "臨床上或影像上疑似局部淋巴結轉移"]
+#  m0 [label = "局部病灶"]
+#  high [label = "高危險度"]
+#  low [label = "低危險度"]
+#  scc4 [label = "SCC-4"]
+#  scc3 [label = "SCC-3"]
+#  scc2 [label = "SCC-2"]
+  
+#  {rank = same; m1; m0}
+#  {rank = same; scc4; scc3; scc2}
+}

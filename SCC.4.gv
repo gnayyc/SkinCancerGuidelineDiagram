@@ -1,0 +1,44 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+  ln -> na -> {ln0 ln1}
+     ln0 -> ex -> {ex0 ex1}
+            ex0 -> fu6
+            ex1 -> im
+     ln1 -> im -> {op1 op2}
+          op1 -> lnd -> {body hn}
+             body -> rt1 
+             hn -> fu5
+          op2 -> rt2 -> fu6
+  
+  
+  ln [label = "可觸診之局部淋巴結或\l影像證實之異常淋巴結\l"; height=4]
+  na [label = "細針抽吸或\l粗針切片\l"; height=4]
+  ln0 [label = "陰性"]
+  ln1 [label = "陽性"]
+  ex [label = "考慮重新評估：\n
+臨床表現\l
+影像學\l
+重複細針抽吸，粗針切片或開放性\l淋巴結切片手術\l"; width=4; height=2]
+  im [label = "影像學檢查確認淋巴結大小、\l數量、位置，並排除遠處轉移。\l"; width=4; height=2]
+  ex0  [label = "陰性"]
+  ex1 [label = "陽性"]
+  op1 [label = "手術"]
+  op2 [label = "無法手術"]
+  lnd [label = "局部淋巴結廓清手術"; height=2]
+  body [label = "軀幹及四肢"]
+  hn [label = "頭頸部"]
+  rt1 [label = "考慮放射線治療，尤其是多重淋巴結轉移，或是囊外侵犯。"]
+  rt2 [label = "放射線治療和/或同步全身性系統性療法。"]
+#  obs_XXX [label = "觀察XXXX"]
+  fu5 [label = "SCC-5"]
+  fu6 [label = "追蹤 (SCC-6)"; height=5]
+  
+  {rank = same; ln0; ln1}
+  {rank = same; ex; im}
+  {rank = same; ex0; ex1; op1; op2}
+  {rank = same; ln0; ln1}
+  {rank = same; rt1; rt2}
+
+}

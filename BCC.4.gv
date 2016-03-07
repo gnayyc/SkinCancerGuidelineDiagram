@@ -1,0 +1,23 @@
+digraph {
+  compound=true;
+
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+    l1 [label = "門診追蹤：
+終身每6-12月一次\l"; height=2]
+
+	l1 -> t1 -> f1 
+	l1 -> t2 -> f2
+
+	
+	t1 [label = "局部病灶復發"; width = 2.5]
+	t2 [label = "淋巴結或遠處轉移"; width = 2.5]
+	f1 [label ="(BCC-1)"; width=2.5]
+	f2 [label = "手術和/或放射線治療\l腫瘤專科與多專科照會\l或臨床試驗\l"; width=2.5]
+#  obs [label = "觀察"; height = 3]
+#  fu [label = "追蹤 (SCC-6)"; height = 3]
+
+
+
+}

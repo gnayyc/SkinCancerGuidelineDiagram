@@ -1,0 +1,29 @@
+digraph {
+  compound=true;
+
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+  subgraph cluster1 {
+    l1 [label = "局部病灶\n
+- 門診追蹤\l  - 每3-12月一次，共2年。\l  - 每6-12月一次，共3年。\l  - 每年一次\l"]
+    l2 [label=""; shape=none]
+    l3 [label = "區域性病灶\n
+- 門診追蹤\l  - 每1-3月一次，共1年。\l  - 每2-4月一次，共1年。\l  - 每4-6月一次，共3年。\l  - 每6-12月一次\l"]
+	}
+	
+	l1 -> t1 [ltail = cluster1] 
+	      t1 -> "(SCC-1)"
+	l2 -> t2 [ltail = cluster1] 
+	      t2 -> "(SCC-4)"
+	l3 -> t3 [ltail = cluster1] 
+	      t3 -> "腫瘤專科與多專科照會或\l臨床試驗(建議)\l"
+	
+	t1 [label = "局部病灶"; width = 2.5]
+	t2 [label = "新發現同區域病灶"; width = 2.5]
+	t3 [label = "同區域復發或遠處轉移"; width = 2.5]
+	
+#  obs [label = "觀察"; height = 3]
+#  fu [label = "追蹤 (SCC-6)"; height = 3]
+
+}

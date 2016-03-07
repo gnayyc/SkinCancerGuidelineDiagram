@@ -1,0 +1,59 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+  E [label = "\n\n\n\n\n\l    Exam\l\n- 病史詢問及理學檢查\l- 完整的皮膚檢查\l- 病理切片\l- 電腦斷層或核磁共振或正子電腦斷層\l- Abd echo、Bone scan(視需要)\l- Brain MRI(第四期)\l\l\l\n\n\n\n\n\n"]; 
+  S0 [label = "第0期"; width=1.5];
+  OP0 [label = "手術"]
+  
+  S1 [label = "第IA~II期"; width=1.5]; 
+  OP1 [label = "手術"]
+  LN1 [label = "前哨淋巴結切片"]
+  M11 [label = "有轉移"]
+  M10 [label = "無轉移"]
+  OP11 [label = "手術"]
+  OT1 [label = "電療或化療或標靶或臨床試驗"]
+  
+  
+  S3 [label = "第III期"; width=1.5]; 
+  OP3 [label = "手術"]
+  OT3 [label = "電療或化療或標靶或臨床試驗"]
+  
+  S4 [label = "第IV期"; width=1.5];
+  OP4 [label = "手術"]
+  M4 [label = "轉移腫瘤"]
+  OP41 [label = "手術"]
+  OT4 [label = "電療或化療或標靶或臨床試驗"]
+  OP40 [label = "無法手術"]
+  B1 [label = "腦部轉移"]
+  B0 [label = "無腦部轉移"]
+  OP42 [label = "手術"]
+  
+  FU [label = "\l\l\l\l\l\n\n\n追踨\n\l\l\l\l\l\n\n\n"]
+  
+  E->{S0 S1 S3 S4}
+  
+  S0->OP0->FU
+  
+  S1->OP1->LN1->M10->FU
+           LN1->M11->OP11->OT1->FU
+  
+  S3->OP3->OT3->FU
+      OP3->FU
+      
+  S4->OP4->M4->OP41->OT4->FU
+           M4->OP40->B1->OT4
+                     B1->OP42->OT4
+                         OP42->FU
+               OP40->B0->OT4
+  {rank = same; S0; S1; S3; S4}
+  {rank = same; OT1; OT3 OT4}
+  {rank = same; LN1; M4}
+  {rank = same; M10; M11; B1; B0}
+  {rank = same; OP40; OP41}
+#  {rank = same; B1; B0}
+  {rank = same; OP0; OP1; OP3; OP4}
+  {rank = same; OT1; OT3 OT4}
+  {rank = same; FU}
+
+}
+

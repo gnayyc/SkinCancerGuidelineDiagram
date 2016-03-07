@@ -1,0 +1,81 @@
+digraph {
+  graph [rankdir = LR; splines=ortho; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+#  T1->T2->T22->T3->T4 [style=invis]
+#  T22 [style=invisible]
+#  T1->
+#  S3->S4 [style=invis]
+#  Tx3->OP41->OP40 [style=invis]
+#  S3->W3->Tx3->FU3
+#  S4->W4->Tx4->FU4
+
+  S4->W4->OP41->Tx41->Resi0->FU4
+                Tx41->Resi1->OP40
+          OP41->Tx42->M0->Tx421->Resi0
+                          Tx421->Resi1
+                Tx42->M1->OP40
+      W4->OP40->B1->OT4->FU41
+          OP40->B0->FU41
+
+  Tx41->Tx42 [style=invis]
+  OP41->OP40 [style=invis]
+
+  {rank = same; S4}
+  {rank = same; W4}
+  {rank = same; OP40; OP41}
+  {rank = same; Tx41; Tx42; B0; B1}
+  {rank = same; FU4; FU41}
+  {rank = same; Resi0; Resi1; OT4}
+#  {rank = same; N0; N1}
+
+
+#  T1 [label = "CLINICAL/\lPATHOLOGICAL STAGE\l"; width=2.5; shape=plaintext]
+#  T2 [label = "WORKUP"; shape=plaintext]
+#  T3 [label = "PRIMARY TREATMENT"; shape=plaintext]
+#  T4 [label = "ADJUVANT TREATMENT"; shape=plaintext]
+
+#  S3 [label ="III期癌\n(In-transit)"; width=3; height=2]
+  S4 [label ="IV期癌\n(轉移)"; width=3; height=2]
+  
+#  W3 [label = "細針抽吸淋巴結檢查為佳\l
+#或core, incisional, excisional 淋巴結切片\l
+#建議為腫瘤分期及評估特定症狀與症候\l安排基礎影像檢查(CT, PET/CT, MRI)\l\l"; 
+#height=2.5; width=6]
+  W4 [label = "若無已存組織可進行基因檢查，安排淋巴結細針抽吸或\l切片檢查\l
+LDH\l
+BRAF 基因突變分析\l
+為腫瘤分期及評估特定症狀與症候安排基礎影像檢查\l(chest/abdominal/pelvic CT, PET/CT, brain MRI)\l"; 
+height=4; width=6]
+#  W3 [label = "Discuss and consider sentinel node biopsy"]
+
+#  Tx3 [label = "Clinical trial(建議)\l
+#  局部治療：盡可能確認邊緣完全切除\l
+#  無法全切除：考慮放射線治療\l
+#  系統性治療\l"; 
+#height=1.5; width=2.5]
+  Tx41 [label = "切除"; height=1; width=2.5]
+  Tx42 [label = "觀察或系統性治療，並重覆影像掃描"; height=1; width=2.5]
+  Tx421 [label = "切除"]
+  Resi0 [label = "無疾病證據"; width = 4; height=1.2]
+  Resi1 [label = "仍有殘存疾病"; width = 4; height=1.2]
+#  Tx3 [label = "Clinical trial\n/觀察\n"; height=3; width=2]
+  B0 [label = "無腦部轉移";  height=1; width=2.5]
+  B1 [label = "有腦部轉移";  height=1; width=2.5]
+
+  OP40 [label = "無法切除\n(瀰漫性病灶)"; width = 2; height=2]  
+  OP41 [label = "可切除\n(有限病灶)"; width = 2; height=2]
+  OT4 [label = "考慮緩和性切除/或加上放射性治療"; width = 4]
+#  N0 [label = "陰性前哨淋巴結"; height=1.2]
+#  N1 [label = "陽性前哨淋巴結"; height=1.2]
+#  FU3 [label = "Clinical trial\l
+#觀察追蹤\l"; width=3; height=2]
+  FU4 [label = "Clinical trial\l
+觀察追蹤\l"; width=3; height=2]
+  FU41 [label = "系統性治療(建議)\l
+考慮在有症狀者加上緩和性\l切除或放射性治療\l"; width=3; height=2]
+
+M0 [label = "已無其他腫瘤"]
+M1 [label = "仍有其他腫瘤"]
+
+}

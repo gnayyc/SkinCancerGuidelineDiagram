@@ -1,0 +1,44 @@
+digraph {
+  graph [rankdir = LR; splines=splines; overlap=false]
+  node [shape = box, fontname = Helvetica]
+
+  Exam->Low->OP1->Bo1->FU
+             OP1->Bo2->OP11->FU
+                  Bo2->RT1->FU
+        Low->OP2->RT2->FU
+  Exam->High->OP3->Bo3->FU
+              OP3->Bo4->OP31->FU
+                   Bo4->RT3->FU
+        High->OP4->RT4->FU
+
+  Exam [label = "檢查\l
+- 病史詢問及理學檢查\l
+- 完整的皮膚檢查\l
+- 病理切片\l
+- 電腦斷層或核磁共振\l
+   (視需要)";
+   height = 4]
+  Low [label="低惡性度"; height = 2; width = 1.5]
+  High [label="高惡性度"; height = 2; width = 1.5]
+
+  OP1 [label="手術"; height=1.1; width=1.3]
+  OP2 [label="無法手術"; height=1.1; width=1.3]
+  OP3 [label="手術"; height=1.1; width=1.3]
+  OP4 [label="無法手術"; height=1.1; width=1.3]
+
+  OP11 [label="再手術"; height=1.1; width=2]
+  OP31 [label="再手術"; height=1.1; width=2]
+  Bo1 [label="術後邊緣呈陰性"; height=1; width=2]
+  Bo2 [label="術後邊緣呈陽性"; height=1; width=2]
+  Bo3 [label="術後邊緣呈陰性"; height=1; width=2]
+  Bo4 [label="術後邊緣呈陽性"; height=1; width=2]
+  RT1 [label="考慮 RT"; width=2]  
+  RT2 [label="RT"; width=2]  
+  RT3 [label="考慮 RT"; width=2]  
+  RT4 [label="RT"; width=2]  
+
+  FU [label="追蹤", height=7; width=2]
+  {rank = same; Low; High}
+  {rank = same; OP1; OP2; OP3; OP4}
+  {rank = same; Bo1; Bo2; Bo3; Bo4}
+}
