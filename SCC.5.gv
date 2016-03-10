@@ -35,7 +35,7 @@ digraph {
 	
 	p1 [label = "單一淋巴結≦3cm，\l並且無囊外侵犯。\l"; width=2.5]
 	p2 [label = "單一淋巴結>3cm，\l或陽性淋巴結數≧2，\l並且無囊外侵犯。\l"; width=2.5]
-	p3 [label = "有囊外侵犯\l"; width=2.5]
+	p3 [label = "有任一淋巴結囊外侵犯\l"; width=2.5]
 	p4 [label = "陽性淋巴結無法完全切除\l"; width=2.5]
 
   r1 [label = 放射線治療或觀察; width = 2.5]
