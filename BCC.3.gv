@@ -5,20 +5,20 @@ digraph {
   high -> {tx1 tx2 tx3}
     tx1 -> tx2 -> tx3 [style=invis]
           tx1 -> {bo1 bo2}
-                bo1 -> tx21 
+                bo1 -> tx21
                 bo2 -> tx11 -> bo21 -> tx12 -> fu
           tx2 -> {bo3 bo4}
                 bo3 -> tx21 -> fu
-                bo4 -> tx22 
+                bo4 -> tx22
           tx3 -> fu
-  
+
   high [label = 高惡性度基底細胞癌; height = 4]
   tx1 [label = "標準切除手術\n
 若是再次切除的高惡性病灶，\n建議更廣泛的切除邊緣後直接線性縫合或延遲性縫合。\n
 "; width = 5.5; height=2]
-  tx11 [label = "病灶全切除並進行完整邊緣病理鏡檢\l或放射線治療\l"; width = 5]
+  tx11 [label = "病灶全切除並進行邊緣病理鏡檢\l或放射線治療\l"; width = 5]
   tx12 [label = "無法再次手術切除或放射線治療者，\l考慮腫瘤專科與多專科照會或\l臨床試驗\l"; width = 4; height=1.5]
-  tx2 [label = 病灶全切除並進行完整邊緣病理鏡檢。; width = 5.5; height=1.5]
+  tx2 [label = 病灶全切除並進行邊緣病理鏡檢。; width = 5.5; height=1.5]
   tx21 [label = "若廣泛侵犯神經周圍組織或主要大神經，\l則建議追加輔助性放射線治療療法。\l"; width=5; height=1.5]
   tx22 [label = "放射線治療\l和/或腫瘤專科與多專科照會或臨床試驗\l"; width=5]
   tx3 [label = 無法進行手術之病灶，建議放射線治療及系統性療法。; width = 5.5; height=1.5]
@@ -26,7 +26,7 @@ digraph {
 
   {rank = same; tx1; tx2; tx3}
   {rank = same; bo1; bo2; bo3; bo4}
-  
+
   bo1 [label = 邊緣呈現陰性]
   bo2 [label = 邊緣呈現陽性]
   bo21 [label = 邊緣呈現陽性]
