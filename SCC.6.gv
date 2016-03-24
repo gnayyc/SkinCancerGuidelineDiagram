@@ -13,7 +13,7 @@ digraph {
 	}
 	
 	l1 -> t1 [ltail = cluster1] 
-	      t1 -> "(SCC-1)"
+	      t1 -> "(SCC-2)"
 	l2 -> t2 [ltail = cluster1] 
 	      t2 -> "(SCC-4)"
 	l3 -> t3 [ltail = cluster1] 
