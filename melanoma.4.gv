@@ -49,7 +49,7 @@ BRAF 基因突變分析\l
 height=4; width=6]
 #  W3 [label = "Discuss and consider sentinel node biopsy"]
 
-#  Tx3 [label = "Clinical trial(建議)\l
+#  Tx3 [label = "臨床試驗(建議)\l
 #  局部治療：盡可能確認邊緣完全切除\l
 #  無法全切除：考慮放射線治療\l
 #  系統性治療\l"; 
@@ -59,7 +59,7 @@ height=4; width=6]
   Tx421 [label = "切除"]
   Resi0 [label = "無疾病證據"; width = 4; height=1.2]
   Resi1 [label = "仍有殘存疾病"; width = 4; height=1.2]
-#  Tx3 [label = "Clinical trial\n/觀察\n"; height=3; width=2]
+#  Tx3 [label = "臨床試驗\n/觀察\n"; height=3; width=2]
   B0 [label = "無腦部轉移";  height=1; width=2.5]
   B1 [label = "有腦部轉移";  height=1; width=2.5]
 
@@ -68,9 +68,9 @@ height=4; width=6]
   OT4 [label = "考慮緩和性切除/或加上放射性治療"; width = 4]
 #  N0 [label = "陰性前哨淋巴結"; height=1.2]
 #  N1 [label = "陽性前哨淋巴結"; height=1.2]
-#  FU3 [label = "Clinical trial\l
+#  FU3 [label = "臨床試驗\l
 #觀察追蹤\l"; width=3; height=2]
-  FU4 [label = "Clinical trial\l
+  FU4 [label = "臨床試驗\l
 觀察追蹤\l"; width=3; height=2]
   FU41 [label = "系統性治療(建議)\l
 考慮在有症狀者加上緩和性\l切除或放射性治療\l"; width=3; height=2]
