@@ -11,7 +11,7 @@ digraph {
 (陽性前哨淋巴結)\l"; width=3; height=2]
   S3b [label ="III期癌\l
 (臨床陽性淋巴結)\l"; width=3; height=2]
-  
+
   W1 [label = "考慮為腫瘤分期及評估特定症狀與症候\l安排基礎影像檢查(CT, PET/CT, MRI)\l"; height=2.5; width=4.5]
   W2 [label = "細針抽吸淋巴結檢查為佳\l
 或core, incisional, excisional 淋巴結切片\l
@@ -21,14 +21,14 @@ digraph {
   Tx1 [label = "討論並提供淋巴結全廓清術\l"; height=1.5; width=2.5]
   Tx2 [label = "廣泛性切除原發腫瘤\l與淋巴結全廓清術\l"; height=1.5; width=2.5]
 #  Tx3 [label = "臨床試驗\n/觀察\n"; height=3; width=2]
-  
+
 #  N0 [label = "陰性前哨淋巴結"; height=1.2]
 #  N1 [label = "陽性前哨淋巴結"; height=1.2]
   FU1 [label = "臨床試驗\l
-系統性療法(包含免疫療法)\l
+系統性治療\l
 觀察追蹤\l"; width=3; height=2]
   FU2 [label = "臨床試驗\l
-系統性療法(包含免疫療法)\l
+系統性治療\l
 觀察追蹤\l
 評估淋巴結區域放射線治療\l"; width=3; height=2]
 
@@ -45,7 +45,7 @@ digraph {
   {rank = same; Tx1; Tx2}
   {rank = same; FU1; FU2}
 #  {rank = same; N0; N1}
-  
-  
+
+
 
 }
